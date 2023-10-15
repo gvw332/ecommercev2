@@ -7,21 +7,5 @@ class Controller_Principal extends Controller{
         $titre['titre'] = 'Accueil';
         $myView->render($titre);
     }
-    // Affichage de la page services
-    public function Services(){
-        $myView = new View('services');
-        $titre['titre'] = 'Services';
-        $myView->render($titre);
-    }
-    // Affichage de la page details
-    public function details($data){
 
-        $myView = new View('details');
-     
-        $users = $data;
-        $users['titre'] = 'details';
-
-        $myView->render($users);
-
-    }
 }

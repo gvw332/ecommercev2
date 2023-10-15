@@ -26,7 +26,7 @@
 <!---------------- FIN DE CONTENU DU "FOOTER ------------------>
 
 <script src="../javascript/addtocart.js"></script>
-
+<script src="../ecommercev2/public/javascript/modal.js"></script>
 <script src="../javascript/scrolltop.js"></script>
 
 </body>

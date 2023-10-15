@@ -53,6 +53,25 @@ class Model{
         $pre->execute();
         return $pre->fetchAll(PDO::FETCH_OBJ);
     }
+    
+    public function find_in()
+    {
+        $session = new Session();
+        $cart = $_SESSION['panier'];
+
+        $ids = array_keys($cart);
+        if (empty($ids)) {
+            $arr = array();
+        } else {
+            $arr = implode(',', $ids);
+        }
+        $sql = 'SELECT * FROM ' . $this->table . ' ';
+        $sql .= 'WHERE id in (' . $arr . ')';
+
+        $pre = $this->bdd->prepare($sql);
+        $pre->execute();
+        return $pre->fetchAll(PDO::FETCH_OBJ);
+    }
     // Récupère tous les enregistrements de la table (classés par ordre décroissant pour les actualités)
     public function all(){
         $sql = 'SELECT * from ' . $this->table . ' ';

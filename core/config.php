@@ -11,8 +11,8 @@ class MyAutoload{
         $host = $_SERVER['HTTP_HOST'];
 
         if ($_SERVER['SERVER_NAME'] == 'localhost') {
-            define('HOST', 'http://' . $host . '/ecommerce/');
-            define('ROOT', $root . '/ecommerce/');
+            define('HOST', 'http://' . $host . '/ecommercev2/');
+            define('ROOT', $root . '/ecommercev2/');
         } else {
             define('HOST', 'https://' . $host . '/');
             define('ROOT', '/' . $root . '/');
