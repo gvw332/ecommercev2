@@ -162,5 +162,8 @@ if (isset($_POST['modal'])) {
 <p>GIT C EST DE LA MERDE</p>
 <p>GIT C EST DE LA MERDE</p>
 <p>GIT C EST DE LA MERDE</p>
+<p>GIT C EST DE LA MERDE</p>
+<p>GIT C EST DE LA MERDE</p>
+<p>GIT C EST DE LA MERDE</p>
 </div>
 <!-- FIN DE PANIER --->
