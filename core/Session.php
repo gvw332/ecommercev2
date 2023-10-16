@@ -79,26 +79,27 @@ class Session
     {
         $products = new model_produit();
         $total = 0;
-        $ids = array_keys($_SESSION[$panier]);
-        $cart = $_SESSION['panier'];
+        if (isset($_SESSION['panier'])) {
+            $ids = array_keys($_SESSION[$panier]);
+            $cart = $_SESSION['panier'];
 
-        if (!empty($cart)) {
+            if (!empty($cart)) {
 
-            $ids = array_keys($cart);
-            if (empty($ids)) {
-                $arr = array();
+                $ids = array_keys($cart);
+                if (empty($ids)) {
+                    $arr = array();
+                } else {
+                    $arr = implode(',', $ids);
+                }
+                $products  = new model_produit;
+                $lines = $products->find_in();
+                foreach ($lines as $line) {
+                    $total += $line->price * $cart[$line->id];
+                }
             } else {
-                $arr = implode(',', $ids);
+                $arr = array();
             }
-            $products  = new model_produit;
-            $lines = $products->find_in();
-            foreach ($lines as $line) {
-                $total += $line->price * $cart[$line->id];
-            }
-        } else {
-            $arr = array();
         }
-
         return $total;
     }
 }

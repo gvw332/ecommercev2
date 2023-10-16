@@ -6,23 +6,27 @@ class Controller_Produits extends Controller
 
     public function Accueil()
     {
+
         $session = new Session();
-        $cart = $_SESSION['panier'];
+        if (isset($_SESSION['panier'])) {
 
-        if (!empty($cart)) {
 
-            $ids = array_keys($cart);
-            if (empty($ids)) {
-                $arr = array();
+            $cart = $_SESSION['panier'];
+
+            if (!empty($cart)) {
+
+                $ids = array_keys($cart);
+                if (empty($ids)) {
+                    $arr = array();
+                } else {
+                    $arr = implode(',', $ids);
+                }
+                $produit = new model_produit;
+                $lines = $produit->find_in();
             } else {
-                $arr = implode(',', $ids);
+                $arr = array();
             }
-            $produit = new model_produit;
-            $lines = $produit->find_in();
-        } else {
-            $arr = array();
         }
-
         $search = "";
         if (isset($_GET['search'])) {
             $search = $_GET['search'];

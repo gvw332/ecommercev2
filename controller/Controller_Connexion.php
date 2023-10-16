@@ -2,7 +2,7 @@
 // Gère toutes les fonctions de connexions
 class Controller_Connexion extends Controller{
     // Affiche la page de connexion
-    public function connexion(){
+    public function connexion(){        
         $myView = new View('connexion');
         $titre['titre'] = 'Connexion';
         $myView->render($titre);

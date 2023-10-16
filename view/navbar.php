@@ -61,52 +61,6 @@ if (isset($_SESSION['pseudo'])) {
     </div>
 
 
-    <div id="modal-panier" class="modal">
-
-        <div class="modal-panier-content">
-            <h2 class="titre-modal-panier">PANIER</h2>
-            <br>
-            <?php if ($session->count() < 1) : ?>
-                <h1 class="modal-chapitre"> Votre panier est vide</h1>
-            <?php else : ?>
-                <h1 class="modal-chapitre">Total : <?= number_format($session->total(), 2, ',', ' ') ?> € </h1>
-                <h1 class="modal-chapitre">Item : <?= number_format($session->count(), 0, ',', ' ') ?></h1>
-            <?php endif; ?>
-
-
-        <?php if (isset($panier)) : ?>
-            <?php foreach ($panier as $item) : ?>
-
-                <span class="img-panier"><img src="<?php echo IMAGES; ?><?php echo $item->image; ?>" alt="<?php echo $item->title; ?>"></span>
-                <span><?php echo $item->title; ?></span>
-                <span><?php echo $item->price; ?></span>
-                <span>
-                    <form method="POST" action="moins.panier">
-                        <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
-                        <button type="submit" name="moins">-</button>
-                    </form>
-                </span>
-                <span><?php echo $_SESSION["panier"][$item->id]; ?></span>
-                <span>
-                    <form method="POST" action="plus.panier">
-                        <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
-                        <button type="submit" name="plus">+</button>
-                    </form>
-                    <span>
-                        <form method="POST" action="del.panier">
-                            <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
-                            <button type="submit" name="del">Poubelle</button>
-                        </form>
-                    </span>
-                </span>
-
-
-            <?php endforeach ?>
-        <?php endif; ?>    
-
-            <p><?php echo $session->total(); ?></p>
-            <button>Commander</button>
-        </div>
-    </div>
+   
 </header>
 <!-- FIN DE NAVIGATION --->
