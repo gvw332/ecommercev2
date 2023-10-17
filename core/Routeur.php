@@ -31,7 +31,7 @@ class Routeur{
         "admin.save"   => ['controller' => 'Controller_Utilisateur', 'method' => 'save'],
 
     
-        "details" => ['controller' => 'Controller_Principal', 'method' => 'details'],
+        "details" => ['controller' => 'Controller_Produits', 'method' => 'details'],
 
         "contact"      => ['controller' => 'Controller_Contact', 'method' => 'contact'],
         "contact.ctrl" => ['controller' => 'Controller_Contact', 'method' => 'contact_ctrl'],

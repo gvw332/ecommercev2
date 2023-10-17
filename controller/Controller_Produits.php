@@ -111,4 +111,24 @@ class Controller_Produits extends Controller
 
         $session->render('accueil');
     }
+
+    public function details($reponse)
+    {
+        // var_dump($_POST);
+        // die;
+        $id = $_POST['id'];
+        $produits = new model_produit();
+        
+
+        $rep_produit = $produits->find(
+            array(
+                'id' => $id,
+            )
+        );
+
+        $myView = new View('details');
+        $rep_produit['titre'] = 'Details';
+        $myView->render($rep_produit);
+      
+    }
 }

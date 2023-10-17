@@ -26,9 +26,7 @@
 <!---------------- FIN DE CONTENU DU "FOOTER ------------------>
 <script src="../ecommercev2/public/javascript/panier-off-on.js"></script>
 <script src="../ecommercev2/public/javascript/icon-connexion.js"></script>
-<script src="../javascript/addtocart.js"></script>
-<script src="../ecommercev2/public/javascript/modal.js"></script>
-<script src="../javascript/scrolltop.js"></script>
+<script src="../ecommercev2/javascript/scrolltop.js"></script>
 
 </body>
 

@@ -19,20 +19,19 @@ if (isset($_SESSION['pseudo'])) {
     <div class="nav">
         <?php if ($niveau >= 1) : ?>
             <h1><?= isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : '' ?></h1>
-            
-            <div class="deconnexion user-icon"id="userIcon"><a href="deconnexion"><i class="fa-regular fa-user"></i></a></div>
 
-
-
-            <div class="logout-menu" id="logoutMenu">
-                <button id="logoutOption">Se déconnecter</button>
+            <div class="deconnexion user-icon" title="deconnexion" id="userIcon"><a><i class="fa-regular fa-user"></i></a>
             </div>
 
 
 
 
 
-            <div class="panier-nav open-modal" id="panier-btn" data-modal="modal-panier">
+
+
+
+
+            <div class="panier-nav open-modal" title="panier" id="panier-btn" data-modal="modal-panier">
                 <p id="count"><?php echo $session->count(); ?></p>
                 <i class="fa-solid fa-cart-shopping"></i>
 

@@ -61,6 +61,8 @@
 
 }
 
+
+
 .nav p {
 
     height: 22px;
@@ -277,22 +279,83 @@ tbody td img{
 }
 
 
-/*------------------*/
+
+/*------- icone de connexion et de déconnexion -----------*/
 
 .user-icon a{
     color:rgb(21, 49, 73);
     padding-right: 8px;
+    cursor:pointer;
+
 }
-.logout-menu{
-    padding-top: 65px;
-}
-  
-  .logout-menu {
-    display: none;
-    position: absolute;
-    /* Styles pour votre menu de déconnexion */
-  }
+
+
   
   .user-icon:hover + .logout-menu {
     display: block;
+    cursor:pointer;
+    font-size: 3em;
   }
+  
+  /*------- FIN DE icone de connexion et de déconnexion -----------*/
+
+
+  /* PAGE DE DETAILS */
+
+  a button.btn-back{
+    margin-top: 150px;
+    margin-left: 44%;
+    
+  
+    
+  }
+  #article-panier-details{
+    display:flex;
+    flex-direction: row;
+
+  }  
+
+
+  #article-panier-details .card-details{
+    margin-top:150px;
+    width: 80%;
+    
+    display:flex;
+  }
+
+  #article-panier-details #panier{
+    margin-top: 100px;
+  }
+
+
+  .card-details{
+    border:1px solid black;
+    
+  }
+
+  .card-details img{
+    width:450px;
+    height: auto;
+   
+  }
+  .info-produit{
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+  }
+  #imageButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  .form-detail{
+    position: relative;
+}
+  /* FIN DE PAGE DE DETAILS */

@@ -1,160 +1,83 @@
 <?php
-// Définition des produits
-$products = [
-    [
-        'id' => 0,
-        'image' => '../images/poster.jpg',
-        'title' => 'Poster',
-        'price' => 10,
-        'details' => '0Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 1,
-        'image' => '../images/mug.jpg',
-        'title' => 'Mug',
-        'price' => 15,
-        'details' => '1Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 2,
-        'image' => '../images/bougie.jpg',
-        'title' => 'Bougie',
-        'price' => 17,
-        'details' => '2Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 3,
-        'image' => '../images/couverture-chauffante.jpg',
-        'title' => 'Couverture-chauffante',
-        'price' =>  19,
-        'details' => '3Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 4,
-        'image' => '../images/tshirt.jpg',
-        'title' => 'T-shirt',
-        'price' => 14,
-        'details' => '4Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 5,
-        'image' => '../images/spiruline-paillettes-100g.jpg',
-        'title' => 'Spiruline /100g',
-        'price' => 17,
-        'details' => '5Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-    [
-        'id' => 6,
-        'image' => '../images/coque-tel.jpg',
-        'title' => 'Coque Smartphone',
-        'price' => 8,
-        'details' => '6Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, in.',
-    ],
-];
-
-// Démarrer la session
-// session_start();
-
-// Si le panier n'existe pas en session, initialisez-le
-if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = [];
-}
-
-// Ajouter un produit au panier
-if (isset($_POST['addToCart'])) {
-    $productId = $_POST['productId'];
-    if (array_key_exists($productId, $products)) {
-        array_push($_SESSION['cart'], $products[$productId]);
-    }
-}
-
-// Supprimer un produit du panier
-if (isset($_POST['removeFromCart'])) {
-    $productIndex = $_POST['productIndex'];
-    if (array_key_exists($productIndex, $_SESSION['cart'])) {
-        unset($_SESSION['cart'][$productIndex]);
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // Réorganiser les indices
-    }
-}
-
-// Appelle Modal
-if (isset($_POST['modal'])) {
-    header('Location: poster');
-}
-?>
-
-<?php
-
-if (isset($_SESSION['details'])) {
-    $product = $_SESSION['details'];
-
-};
+$item = $params[0];
 
 ?>
-
-<div class="container">
-    <div id="root-card">
-
-        <div class="box-card">
-
-            <form method="post">
-                <div class="img-box">
-                    <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
-                    <button type="submit" name="modal"><img class="images" src="<?php echo IMAGES . $product['image']; ?>"></button>
-                </div>
-            </form>
-
-
-            <!-- <a class="modal" href="#"><img class="images" src="<?php echo IMAGES . $product['image']; ?>"></a> -->
-
-            <div class="bottom-pannier">
-                <p><?php echo $product['title']; ?></p>
-                <h2>€ <?php echo $product['price']; ?>.00</h2>
-
-                <form method="post">
-                    <input type="hidden" name="productId" value="<?php echo $product['id']; ?>">
-                    <button type="submit" name="addToCart">Ajouter au panier</button>
-                </form>
-            </div>
-        </div>
-        <p><?php echo $product['details']; ?></p>
-    </div>
-
-    <div id="cartItem">
-        <?php
-        if (empty($_SESSION['cart'])) {
-            echo "Votre panier est vide";
-        }
-        ?>
-    </div>
-
-    <div id="cart">
-        <?php
-        $total = 0;
-        foreach ($_SESSION['cart'] as $index => $cartProduct) {
-            $total += $cartProduct['price'];
-        }
-        echo "Total : € $total.00";
-
-        // Afficher les produits dans le panier
-        foreach ($_SESSION['cart'] as $index => $cartProduct) {
-        ?>
-            <div class="cart-item">
-                <div class="row-img">
-                    <img class="rowimg" src="<?php echo IMAGES . $cartProduct['image']; ?>">
-                </div>
-                <p style="font-size: 12px;"><?php echo $cartProduct['title']; ?></p>
-                <h2 style="font-size: 15px">€ <?php echo $cartProduct['price']; ?>.00</h2>
-                <form method="post">
-                    <input type="hidden" name="productIndex" value="<?php echo $index; ?>">
-                    <button class="button-corbeil" type="submit" name="removeFromCart"><i class="fa-solid fa-trash"></i></button>
-                </form>
-            </div>
-        <?php
-        }
-        ?>
-    </div>
+<div class="bouton-back">
+    <a href="accueil">
+        <button class="btn-back">
+            Retour en arrière
+        </button>
+    </a>
 </div>
+<section id="article-panier-details">
 
 
-<!-- FIN DE PANIER --->
+
+    <article class="card-details">
+
+
+
+        <img src="<?php echo IMAGES; ?><?php echo $item->image; ?>" alt="bougie">
+        <div class="info-produit">
+            <h2><?php echo $item->title; ?></h2>
+            <p><?php echo $item->price; ?> €</p>
+            <p>details produits Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, quis illum. Eveniet corrupti, voluptate consequatur incidunt obcaecati illum facere! Nulla quasi libero quibusdam a itaque ducimus sed quaerat minus, tempora, numquam vero doloribus earum. Aut, numquam rem. Nemo doloribus accusamus nihil nobis quae, laborum voluptatibus odit error, exercitationem iure debitis at. Esse ratione atque quo blanditiis placeat? Soluta libero dolor vero tempora facere quibusdam fugiat voluptatibus, vel, doloribus id minus unde qui ex aperiam consequatur iure natus quam ducimus, quos aspernatur incidunt nostrum cumque facilis. Repudiandae tempore qui autem at similique sed, vero placeat nisi rerum in tempora, ut odit aliquid debitis! Cupiditate nostrum veniam delectus expedita rem incidunt eaque aut natus! Porro exercitationem fugit totam doloremque dolorum consequuntur maxime molestiae, incidunt voluptatibus corrupti pariatur maiores nostrum dolor nam quibusdam distinctio aperiam cumque ex! Error culpa ut a quasi, voluptate adipisci vel, amet, optio numquam ab eos? Soluta, exercitationem voluptas.</p>
+        </div>
+
+
+    </article>
+
+
+    <aside id="panier">
+        <div id="modal-panierx" class="modalx">
+
+            <div class="modal-panier-content">
+                <h2 class="titre-modal-panier">PANIER</h2>
+                <br>
+                <?php if ($session->count() < 1) : ?>
+                    <h1 class="modal-chapitre"> Votre panier est vide</h1>
+                <?php else : ?>
+                    <h1 class="modal-chapitre">Total : <?= number_format($session->total(), 2, ',', ' ') ?> € </h1>
+                    <h2 class="modal-chapitre">Item : <?= number_format($session->count(), 0, ',', ' ') ?></h2>
+                <?php endif; ?>
+
+                <table>
+
+                    <tbody>
+                        <?php if (isset($panier)) : ?>
+                            <?php foreach ($panier as $item) : ?>
+                                <tr>
+                                    <td><img src="<?php echo IMAGES; ?><?php echo $item->image; ?>" alt="<?php echo $item->title; ?>"></td>
+                                    <td><?php echo $item->title; ?></td>
+                                    <td><?php echo $item->price; ?>€</td>
+                                    <td>
+                                        <form class="moins" method="POST" action="moins.panier">
+                                            <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
+                                            <button type="submit" name="moins" class="moins-btn"><i class="fa-solid fa-minus"></i></button>
+                                        </form>
+                                        <?php echo $_SESSION["panier"][$item->id]; ?>
+                                        <form class="moins" method="POST" action="plus.panier">
+                                            <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
+                                            <button type="submit" name="plus" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
+                                        </form>
+                                    </td>
+                                    <td><?php echo $item->price * $_SESSION["panier"][$item->id]; ?>€</td>
+                                    <td>
+                                        <form method="POST" action="del.panier">
+                                            <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
+                                            <button type="submit" name="del"><i class="fa-solid fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <br><br>
+                <p>Total : <?php echo $session->total(); ?> €</p>
+                <br><br>
+                <button>Commander</button>
+                <br><br>
+    </aside>
+
+</section>
