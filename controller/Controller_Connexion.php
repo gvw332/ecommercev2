@@ -49,7 +49,7 @@ class Controller_Connexion extends Controller{
         $reponse = $reponse[0];
         $hashed = $reponse->mdp;
 
-        if ($data['mdp'] == $hashed) {
+        if (password_verify($data['mdp'], $hashed)) {
             $_SESSION['pseudo']    = $reponse->pseudo;
             $_SESSION['niveau']   = $reponse->niveau;
             $_SESSION['nom']      = $reponse->nom;

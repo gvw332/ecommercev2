@@ -24,9 +24,9 @@
 
 
 <!---------------- FIN DE CONTENU DU "FOOTER ------------------>
-<script src="../ecommercev2/public/javascript/panier-off-on.js"></script>
-<script src="../ecommercev2/public/javascript/icon-connexion.js"></script>
-<script src="../ecommercev2/javascript/scrolltop.js"></script>
+<script src="<?= ASSETS ?>javascript/panier-off-on.js"></script>
+<script src="<?= ASSETS ?>javascript/icon-connexion.js"></script>
+<script src="<?= ASSETS ?>javascript/scrolltop.js"></script>
 
 </body>
 

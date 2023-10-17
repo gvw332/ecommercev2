@@ -59,8 +59,8 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 } else {
     // sur le site
     define('DB_HOST', 'localhost:3306');
-    define('DB_USER', '');
-    define('DB_PASS', '');
-    define('DB_NAME', '');
+    define('DB_USER', 'gvw332');
+    define('DB_PASS', 'gvw332');
+    define('DB_NAME', 'ecommerce');
 }
  

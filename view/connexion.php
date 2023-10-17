@@ -20,7 +20,7 @@
 			<a href="mdp-demande" class="">Mot de passe oublié ?</a>
 			<br><br>
 
-			<a href="inscription.php" class="">Pas encore inscrit ?</a>
+			<a href="inscription" class="">Pas encore inscrit ?</a>
 			<br><br>
 			<button type="submit">Se connecter</button>
 			<br><br><br><br><br>

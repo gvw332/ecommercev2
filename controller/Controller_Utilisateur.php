@@ -169,7 +169,7 @@ class Controller_Utilisateur extends Controller{
         $validation = new Validation($data);
 
         $validation->cleaning()
-            ->required('nom', 'prenom', 'login/pseudo', 'mail/email', 'mdp/mot de passe', 'mdpbis/confirmation mot de passe')
+            ->required('nom', 'prenom', 'pseudo', 'mail/email', 'mdp/mot de passe', 'mdpbis/confirmation mot de passe')
             ->email('mail/email');
         $errors = $validation->getErrors();
         $data = $validation->getData();
@@ -184,7 +184,7 @@ class Controller_Utilisateur extends Controller{
         $mdp    = $data['mdp'];
         $mdpbis = $data['mdpbis'];
         $mail   = $data['mail'];
-        $login  = $data['login'];
+        $pseudo  = $data['pseudo'];
         $nom    = $data['nom'];
         $prenom = $data['prenom'];
 
@@ -215,7 +215,7 @@ class Controller_Utilisateur extends Controller{
         // 3. et si le login n'existe pas 
         $rep_user = $user->find(
             [
-                'login' =>  $login,
+                'pseudo' =>  $pseudo,
             ]
         );
 
@@ -234,11 +234,11 @@ class Controller_Utilisateur extends Controller{
         $data['mdp']    = password_hash($mdp, PASSWORD_BCRYPT);
         $data['niveau']   = 2;
         $data['mail'] = $mail;
-        $data['login'] = $login;
+        $data['pseudo'] = $pseudo;
 
         $user->save($data);
 
-        $_SESSION['login']    = $login;
+        $_SESSION['pseudo']    = $pseudo;
         $_SESSION['niveau']   = 2;
         $_SESSION['nom']      = $nom;
         $_SESSION['prenom']   = $prenom;

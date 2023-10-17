@@ -1,7 +1,7 @@
 <?php
 $nom    = '';
 $prenom = '';
-$login  = '';
+$pseudo  = '';
 $mail   = '';
 
 if (isset($_SESSION['reload'])) {
@@ -9,7 +9,7 @@ if (isset($_SESSION['reload'])) {
 
     $nom    = $data['nom'];
     $prenom = $data['prenom'];
-    $login  = $data['login'];
+    $pseudo  = $data['pseudo'];
     $mail   = $data['mail'];
 
     unset($_SESSION['reload']);
@@ -29,32 +29,34 @@ if (isset($_SESSION['reload'])) {
             <h2>Inscrivez-vous !</h2>
 
             <div>
-
-                <input type="text" name="nom" id="inputNom" placeholder="Nom" value="<?php echo $nom; ?>">
                 <label for="inputNom">Votre nom</label>
+                <input type="text" name="nom" id="inputNom" placeholder="Nom" value="<?php echo $nom; ?>">
+                
             </div>
             <div>
+            <label for="inputPrenom">Votre prénom</label>
                 <input type="text" name="prenom"  id="inputPrenom" placeholder="Prenom" value="<?php echo $prenom; ?>">
-                <label for="inputPrenom">Votre prénom</label>
+                
             </div>
             <div>
-                <input type="text" name="login"  id="inputLogin" placeholder="Pseudo" value="<?php echo $login; ?>">
+            <label for="inputLogin">Votre pseudo</label>
+                <input type="text" name="pseudo"  id="inputLogin" placeholder="Pseudo" value="<?php echo $pseudo; ?>">
 
-                <label for="inputLogin">Votre pseudo</label>
+              
             </div>
-            <div>
+            <div><label for="inputMail">Votre email</label>
                 <input type="text" name="mail" id="inputMail" placeholder="Email" value="<?php echo $mail; ?>">
 
-                <label for="inputMail">Votre email</label>
+                
             </div>
-            <div>
+            <div><label for="inputPassword">Votre mot de passe</label>
                 <input type="password" name="mdp" id="inputPassword" placeholder="Mot de passe">
 
-                <label for="inputPassword">Votre mot de passe</label>
+                
             </div>
-            <div class="form-floating">
+            <div class="form-floating"><label for="inputMdpBis">Confirmation de votre mot de passe</label>
                 <input type="password" name="mdpbis"id="inputMdpBis" placeholder="Confirmation de votre mot de passe">
-                <label for="inputMdpBis">Confirmation de votre mot de passe</label>
+                
             </div>
             <div>
                 <label for="conditions">

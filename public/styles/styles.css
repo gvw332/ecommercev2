@@ -118,7 +118,7 @@ h1 {
     height:auto;
     padding-left: 55px;
     padding-top: 90px;
-    border:1px solid red;
+    
 }
 
 .cards form button{
@@ -359,3 +359,104 @@ tbody td img{
     position: relative;
 }
   /* FIN DE PAGE DE DETAILS */
+
+
+  /*PAGE INSCRIPTION */
+
+  /* Conteneur principal de la page d'inscription */
+#contenu-inscription {
+    
+    margin:auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  /* Titre du formulaire */
+  #contenu-inscription h2 {
+    padding-top: 150px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Style des champs de saisie */
+  #contenu-inscription input[type="text"],
+  #contenu-inscription input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Style des étiquettes des champs de saisie */
+  #contenu-inscription label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Style pour le bouton d'inscription */
+  #contenu-inscription button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  #contenu-inscription button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style pour les liens dans le texte */
+  #contenu-inscription a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  /* Style pour la case à cocher */
+  #conditions label {
+    display: flex;
+    align-items: center;
+    color: #555;
+  }
+  
+  #conditions input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Style pour les messages d'erreur ou de confirmation */
+  #password-match {
+    text-align: center;
+    color: #e74c3c; /* Rouge */
+    margin-top: 10px;
+  }
+  
+  /* Style pour le conteneur du formulaire */
+  #inscriptionForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ajouter des marges pour les éléments du formulaire */
+  #inscriptionForm > div {
+    margin-bottom: 15px;
+  }
+
+  /* FIN DE PAGE INSCRIPTION */
+
+  /* ALERT */
+  #alert {
+    padding-top: 125px;
+    text-align: center;
+  }
