@@ -8,13 +8,7 @@ if (isset($_SESSION['pseudo'])) {
     $niveau = $_SESSION['niveau'];
 }
 
-// $panier = null;
-// if (isset($params['panier'])) {
-//     $panier = $params['panier'];
-//     unset($params['panier']);
-// } else {
-//     unset($params['panier']);
-// }
+
 
 ?>
 <!-- NAVIGATION --->
@@ -25,13 +19,23 @@ if (isset($_SESSION['pseudo'])) {
     <div class="nav">
         <?php if ($niveau >= 1) : ?>
             <h1><?= isset($_SESSION['pseudo']) ? $_SESSION['pseudo'] : '' ?></h1>
+            
+            <div class="deconnexion user-icon"id="userIcon"><a href="deconnexion"><i class="fa-regular fa-user"></i></a></div>
 
-            <div class="deconnexion"><a href="deconnexion"><i class="fa-regular fa-user"></i></a></div>
 
 
-            <div class="panier-nav open-modal" data-modal="modal-panier">
-                <i class="fa-solid fa-cart-shopping"></i>
+            <div class="logout-menu" id="logoutMenu">
+                <button id="logoutOption">Se déconnecter</button>
+            </div>
+
+
+
+
+
+            <div class="panier-nav open-modal" id="panier-btn" data-modal="modal-panier">
                 <p id="count"><?php echo $session->count(); ?></p>
+                <i class="fa-solid fa-cart-shopping"></i>
+
             </div>
 
 
@@ -61,6 +65,6 @@ if (isset($_SESSION['pseudo'])) {
     </div>
 
 
-   
+
 </header>
 <!-- FIN DE NAVIGATION --->

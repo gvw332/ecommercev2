@@ -25,6 +25,7 @@ if (isset($params['panier'])) {
 
         <form method="POST" action="add.panier">
           <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
+          
           <button type="submit" name="add">Ajouter au panier</button>
         </form>
       </article>
@@ -34,7 +35,7 @@ if (isset($params['panier'])) {
 
 
   </section>
-  <aside>
+  <aside id="panier">
     <div id="modal-panierx" class="modalx">
 
       <div class="modal-panier-content">
