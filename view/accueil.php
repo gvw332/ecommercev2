@@ -1,15 +1,11 @@
 <?php
-
-
-$panier = null;
-if (isset($params['panier'])) {
-  $panier = $params['panier'];
-  unset($params['panier']);
-} else {
-  unset($params['panier']);
-}
-
-
+  $panier = null;
+  if (isset($params['panier'])) {
+    $panier = $params['panier'];
+    unset($params['panier']);
+  } else {
+    unset($params['panier']);
+  }
 ?>
 
 <h1>Accueil</h1>

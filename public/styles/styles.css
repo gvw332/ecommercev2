@@ -18,7 +18,9 @@
     justify-content: space-between;
     padding: 15px;
     margin: auto;
-    position: fixed;
+    position:fixed;
+    z-index: 999;
+    
 }
 
 .header img {
@@ -50,6 +52,7 @@
     margin-right: 75px;
     border-radius: 3px;
     width: auto;
+    
 
 
 }
@@ -106,6 +109,7 @@
 /* SECTION CARDS */
 h1 {
     text-align: center;
+   
 }
 
 
@@ -116,20 +120,19 @@ h1 {
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 15px;
     height:auto;
-    padding-left: 55px;
-    padding-top: 90px;
+    padding-left: 35px;
+    margin-top: 90px;
+    
     
 }
 
 .cards form button{
     border-radius: 8px;
-   ;
-
+  
 }
 .card {
     height:250px;
-    width: 150px;
-    
+    width: 150px;    
     padding: 15px;
     margin: auto;
     background-color: #f2f8fd;    
@@ -143,6 +146,7 @@ h1 {
     width: 100%;
     object-fit: contain;
     border-radius: 15px;
+   
 
 }
 /*  FIN SECTION CARDS */
@@ -150,10 +154,10 @@ h1 {
 
 /* PAGE CONNEXION */
 #contenu-connection {
-    border: 2px solid black;
-    padding-top: 225px;
-    height: 95vh;
+    border: 2px solid black;    
+    height: 100vh;
     text-align: center;
+   padding-top: 150px;
 }
 
 #contenu-connection form {
@@ -219,9 +223,15 @@ h1 {
 /* PAGE CONNEXION FIN  */
 
 /* PANIER */
+aside {
+    width: 30%;
+    margin-top: 100px;
+    text-align: center;
+}
 
 .titre-modal-panier {
-    padding-top: 15px;
+ 
+    position:relative;
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
@@ -237,11 +247,6 @@ h1 {
     grid-gap: 1px;
 }
 
-aside {
-    width: 30%;
-    padding-top: 76px;
-    text-align: center;
-}
 
 aside .modal-panier-content {
     border: 2px solid rgb(21, 49, 73);
@@ -367,7 +372,7 @@ tbody td img{
 #contenu-inscription {
     
     margin:auto;
-    background-color: #fff;
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -460,3 +465,80 @@ tbody td img{
     padding-top: 125px;
     text-align: center;
   }
+
+
+
+  /*PAGE DE MDP DEMANDE*/
+
+ 
+
+/* Styles pour le conteneur principal */
+#container-mdpforgotten {
+  background-color: #f9f9f9;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles pour le formulaire */
+.container {
+  width: 50%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h5 {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+form {
+  text-align: center;
+}
+
+/* Styles pour les champs de formulaire */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  margin-bottom: 2px;
+  display: block;
+}
+
+.input-group {
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styles pour le bouton */
+.btn-nouveau-mdp {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-nouveau-mdp:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour les éléments obligatoires */
+span {
+  color: red;
+}

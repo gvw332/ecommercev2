@@ -19,12 +19,12 @@ if (isset($_SESSION['reload']['login'])) {
 
 <body>
   <!-- Demande d'un nouveau mot de passe (envoi par mail) -->
-  <main id="container-mdpforgotten" style="background-color: rgb(138, 220, 113);height:55vh;" role="main">
-    <div class="container w-50 m-auto">
-      <h5 class="text-center pt-4 pb-3">Vous êtes sur la page de changement de mot de passe</h5>
-      <form class="m-5 text-center m-auto" action="mdp-demande.ctrl" method="post">
+  <main id="container-mdpforgotten"  role="main">
+    <div>
+      <h5>Vous êtes sur la page de changement de mot de passe</h5>
+      <form action="mdp-demande.ctrl" method="post">
         <div class="form-group">
-          <label class="mb-2 pt-3" for="email">Email<span>*</span></label>
+          <label for="email">Email<span>*</span></label>
           <input type="text" name="login" class="form-control" id="email" value="<?= $email ?>" required>
         </div>
         <div class="pt-3 pb-3">

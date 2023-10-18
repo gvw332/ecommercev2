@@ -30,6 +30,7 @@ class MyAutoload{
         define('FOLDER_MEDIAS',  ROOT . 'public/medias/');
         define('FPDF_DIR',  ROOT . 'fpdf/');
         define('PHPMAILER',  ROOT . 'phpmailer/src/');
+        
     }
     // Permet de charger dynamiquement les classes en incluant les fichiers correspondants en fonction de leur emplacement dans les répertoires modèle, classe, contrôleur, FPDF et PHPMailer.
     public static function autoload($class){
