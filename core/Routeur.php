@@ -7,10 +7,14 @@ class Routeur{
     private $routes = [
         "accueil"        => ['controller' => 'Controller_Produits', 'method' => 'Accueil'],
 
+
+        "panier"        => ['controller' => 'Controller_Produits', 'method' => 'Panier'],
         "add.panier"        => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'], 
         "moins.panier"      => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],               
         "plus.panier"       => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],
         "del.panier"       => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],
+
+
 
         "connexion"      => ['controller' => 'Controller_Connexion', 'method' => 'connexion'],
         "connexion.ctrl" => ['controller' => 'Controller_Connexion', 'method' => 'connexion_ctrl'],

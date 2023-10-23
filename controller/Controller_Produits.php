@@ -89,7 +89,6 @@ class Controller_Produits extends Controller
                     $_SESSION['panier'][$rep->id] = 1;
                 }
 
-                $session->setFlash("OK,item $rep->id bien ajoué", 'success');
             }
             if ($moins) {
                 if (isset($_SESSION['panier'][$rep->id]) and $_SESSION['panier'][$rep->id] > 1) {
@@ -98,13 +97,13 @@ class Controller_Produits extends Controller
                     unset($_SESSION['panier'][$rep->id]);
                 }
 
-                $session->setFlash("OK,item $rep->id bien ajoué", 'success');
+           
             }
             if ($del) {
                 if (isset($_SESSION['panier'][$rep->id])) {
                     unset($_SESSION['panier'][$rep->id]);
                 }
-                $session->setFlash("OK,item $rep->id bien supprimé");
+            
             }
         }
 
@@ -129,6 +128,28 @@ class Controller_Produits extends Controller
         $myView = new View('details');
         $rep_produit['titre'] = 'Details';
         $myView->render($rep_produit);
+      
+    }
+
+    public function panier($reponse)
+    {
+        // var_dump($_POST);
+        // die;
+
+        // if (isset($_SESSION['panier'])) {
+        // $id = $_POST['id'];
+        // $produits = new model_produit();
+        
+
+        // $rep_produit = $produits->find(
+        //     array(
+        //         'id' => $id,
+        //     )
+        // );
+
+        $myView = new View('panier');
+        // $rep_produit['titre'] = 'Panier';
+        $myView->render();
       
     }
 }

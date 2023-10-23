@@ -24,19 +24,13 @@ if (isset($_SESSION['pseudo'])) {
             </div>
 
 
+            <a href="panier">
+                <div class="panier-nav open-modal" title="panier" id="panier-btn" data-modal="modal-panier">
+                    <p id="count"><?php echo $session->count(); ?></p>
+                    <i class="fa-solid fa-cart-shopping"></i>
 
-
-
-
-
-
-
-            <div class="panier-nav open-modal" title="panier" id="panier-btn" data-modal="modal-panier">
-                <p id="count"><?php echo $session->count(); ?></p>
-                <i class="fa-solid fa-cart-shopping"></i>
-
-            </div>
-
+                </div>
+            </a>
 
         <?php else : ?>
 
