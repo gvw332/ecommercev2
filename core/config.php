@@ -67,6 +67,6 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
 }
 
 
-
+//cle stripe
 define('PK_STRIPE', 'pk_test_51O2YZFIzz2Dktgswd5bNSjalFuRXubc3By7h24thNwlEntQNM639JJZAdyGU438tCQUOzLU8jhCN93ZFidibkADf00QopYXYSM');
 define('SK_STRIPE', 'sk_test_51O2YZFIzz2DktgswhZJVZc6EKXH0sDIEJhHscxVh6yB3Uchev48gsh3k2qfRIjsBPfvvEAxsgDaY2JtVM8Q0k23R00L7Php09P');
