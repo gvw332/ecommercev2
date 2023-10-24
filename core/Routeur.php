@@ -8,13 +8,13 @@ class Routeur{
         "accueil"        => ['controller' => 'Controller_Produits', 'method' => 'Accueil'],
 
 
-        "panier"        => ['controller' => 'Controller_Produits', 'method' => 'Panier'],
+        "payer"        => ['controller' => 'Controller_Stripe', 'method' => 'paiement'], 
+        "success"        => ['controller' => 'Controller_Stripe', 'method' => 'success'], 
+
         "add.panier"        => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'], 
         "moins.panier"      => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],               
         "plus.panier"       => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],
         "del.panier"       => ['controller' => 'Controller_Produits', 'method' => 'maj_panier'],
-
-
 
         "connexion"      => ['controller' => 'Controller_Connexion', 'method' => 'connexion'],
         "connexion.ctrl" => ['controller' => 'Controller_Connexion', 'method' => 'connexion_ctrl'],

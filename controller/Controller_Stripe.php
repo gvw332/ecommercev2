@@ -1,8 +1,16 @@
 <?php
-// Fonctions servant à appeler les pages qui n'ont pas de données provenant de la base de données (contrairement à actualités, connexion, contact, devis , mdp et utilisateur)
-class Controller_Principal extends Controller{
 
-public function payement()
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+use Stripe\Stripe;
+
+
+
+class Controller_Stripe extends Controller
+{
+    public function paiement()
     {
         $session = new Session();
 
@@ -16,28 +24,27 @@ public function payement()
             } else {
                 $arr = implode(',', $ids);
             }
-            $products  = new Product;
+            $products  = new model_produit;
             $lines = $products->find_in();
         }
+
         $line_items = [];
         foreach ($lines as $item) {
             $line_item = [
                 'quantity' => $_SESSION['panier'][$item->id],
                 'price_data' => [
                     'currency' => 'eur',
-                    'unit_amount' => $item->price * 100, // Convertir le prix en centimes
+                    'unit_amount' => (int)$item->price * 100, // Convertir le prix en centimes
                     'product_data' => [
-                        'name' => $item->name
+                        'name' => $item->title
                     ]
                 ],
             ];
             array_push($line_items, $line_item);
         }
-        // echo '<pre>';
-        // var_dump($line_items);
-        // echo '</pre>';
-        // die;
+
         Stripe::setApiKey(SK_STRIPE);
+
         Stripe::setApiVersion('2023-10-16');
 
 
@@ -75,6 +82,12 @@ public function payement()
 
         header("HTTP/1.1 303 See Other");
         header("Location: " . $checkout_session->url);
+    }
+    public function success()
+    {
+        $myView = new View('success');
+        $titre['titre'] = 'Success';
+        $myView->render($titre);
     }
 
 }

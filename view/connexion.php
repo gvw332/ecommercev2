@@ -5,7 +5,7 @@
 
 		<form action="connexion.ctrl" method="post">
 			<h2>Connectez-vous !</h2>
-			<br>
+<br>
 			<div>
 				<label for="floatingInput">Votre pseudo ou email</label>
 				<input type="text" name="pseudo" class="form-control text-black " id="floatingInput" placeholder="name@example.com">
