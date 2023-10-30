@@ -79,7 +79,7 @@ class Controller_Stripe extends Controller
             'cancel_url' => HOST . 'shopping',
 
         ]);
-
+        $_SESSION['checkout_session'] = $line_items;
         header("HTTP/1.1 303 See Other");
         header("Location: " . $checkout_session->url);
     }

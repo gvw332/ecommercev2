@@ -91,7 +91,7 @@ if (isset($params['panier'])) {
         <br><br>
         <p>Total : <?php echo $session->total(); ?> €</p>
         <br><br>
-        <a href="payer">Commander</a>
+        <a href="payer">Commander ici</a>
         <br><br>
   </aside>
 </section>
