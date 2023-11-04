@@ -22,10 +22,10 @@ if (isset($params['panier'])) {
         <h2><?php echo $item->title; ?></h2>
 
         <form action="details" method="POST" class="form-detail">
-          
-            <img src="<?php echo IMAGES; ?><?php echo $item->image; ?>" >
-            <button type="submit" id="imageButton">click</button>
-          
+
+          <img src="<?php echo IMAGES; ?><?php echo $item->image; ?>">
+          <button type="submit" id="imageButton">click</button>
+
           <input type="hidden" name="id" value="<?php echo $item->id; ?>" />
         </form>
 
@@ -53,7 +53,7 @@ if (isset($params['panier'])) {
           <h1 class="modal-chapitre"> Votre panier est vide</h1>
         <?php else : ?>
           <h1 class="modal-chapitre">Total : <?= number_format($session->total(), 2, ',', ' ') ?> € </h1>
-          <h2 class="modal-chapitre">Item : <?= number_format($session->count(), 0, ',', ' ') ?></h2>
+
         <?php endif; ?>
 
         <table>
@@ -91,7 +91,12 @@ if (isset($params['panier'])) {
         <br><br>
         <p>Total : <?php echo $session->total(); ?> €</p>
         <br><br>
-        <a href="payer">Commander ici</a>
+        <?php if (isset($panier) && ($session->count() > 0)) : ?>
+          <a href="payer">Commander ici</a>
+          
+        <?php else : ?>
+          <p>Sélectionner un produit</p>
+        <?php endif; ?>
         <br><br>
   </aside>
 </section>
