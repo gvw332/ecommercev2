@@ -12,7 +12,7 @@ if (isset($params['panier'])) {
 
 ?>
 
-<h1>Accueil</h1>
+
 <section id="content">
   <section class="cards">
 
@@ -48,7 +48,9 @@ if (isset($params['panier'])) {
 
       <div class="modal-panier-content">
         <h2 class="titre-modal-panier">PANIER</h2>
+        <?php $session->flash();?>
         <br>
+        
         <?php if ($session->count() < 1) : ?>
           <h1 class="modal-chapitre"> Votre panier est vide</h1>
         <?php else : ?>
